@@ -8,7 +8,7 @@ Plug 'pangloss/vim-javascript'
 " Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
 " Fancy status bar!
 Plug 'bling/vim-airline'
