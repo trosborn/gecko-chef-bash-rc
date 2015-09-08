@@ -128,4 +128,7 @@ export GPGKEY=8A0F9A84
 
 export NVM_DIR="/home/eir/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use iojs
+nvm use node
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

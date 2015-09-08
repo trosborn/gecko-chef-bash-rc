@@ -8,7 +8,7 @@ Plug 'pangloss/vim-javascript'
 " Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
 " Fancy status bar!
 Plug 'bling/vim-airline'
@@ -33,8 +33,10 @@ Plug 'godlygeek/tabular'
 call plug#end()
 
 set t_Co=256
-syntax on
+" syntax on
+syntax enable
 set background=dark
+" colorscheme solarized
 
 " This is for delimiMate. Maps C-c to CR -> command mode -> newline
 " and C-x to -> command mode -> end of line
@@ -80,3 +82,8 @@ set softtabstop=2
 set laststatus=2
 " Display buffer tabs
 let g:airline#extensions#tabline#enabled = 1
+
+" Swap Files
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
