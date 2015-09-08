@@ -124,7 +124,7 @@ fi
 
 export GPGKEY=8A0F9A84
 
-# source /etc/bash_completion.d/password-store
+source /etc/bash_completion.d/password-store
 
 export NVM_DIR="/home/eir/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
