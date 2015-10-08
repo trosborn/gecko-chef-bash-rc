@@ -56,15 +56,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ -f ~/.git-prompt.sh ]; then
-  . ~/.git-prompt.sh
-fi
-
-# source ~/.git-prompt.sh
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+source ~/.git-prompt.sh
+source ~/.git-completion.bash
+# z beats cd most of the time.
+#   github.com/rupa/z
+source ~/.z.sh
 
 if [ "$color_prompt" = yes ]; then
   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w
