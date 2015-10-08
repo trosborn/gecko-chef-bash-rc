@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 source ~/.git-prompt.sh
-source ~/.git-completion.bash
+source ~/.git-completion.sh
 # z beats cd most of the time.
 #   github.com/rupa/z
 source ~/.z.sh
