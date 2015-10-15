@@ -38,6 +38,8 @@ set background=dark
 
 syntax on
 
+set hls
+
 " This is for delimiMate. Maps C-c to CR -> command mode -> newline
 inoremap <C-c> <CR><Esc>O
 
