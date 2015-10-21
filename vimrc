@@ -9,6 +9,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
 Plug 'bling/vim-airline'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
 
 " Not using these right now..
 
@@ -21,7 +23,6 @@ Plug 'bling/vim-airline'
 " Plugin 'Yggdroot/indentLine' 
 
 " Plugin 'jnurmine/Zenburn'
-" Plug 'scrooloose/syntastic'
 " Remote pair programming
 " Plugin 'Floobits/floobits-vim'
 " Fuzzy file searching
@@ -38,7 +39,17 @@ set background=dark
 
 syntax on
 
-set hls
+" Syntastic config
+let g:syntastic_enable_signs=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%F
+" Fugative
+set statusline+=%{fugitive#statusline()}
+
+" JavaScript
+let g:syntastic_javascript_checkers = ['eslint']
 
 " This is for delimiMate. Maps C-c to CR -> command mode -> newline
 inoremap <C-c> <CR><Esc>O
