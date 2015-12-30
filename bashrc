@@ -129,7 +129,6 @@ export GPGKEY=8A0F9A84
 
 export NVM_DIR="/home/eir/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use v5
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
