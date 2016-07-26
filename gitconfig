@@ -1,6 +1,6 @@
 [user]
-  email = jason@honua.co
-  name = Jason Mendes
+  email = trosborn@gmail.com
+  name = Thomas Osborn
 
 [credential]
   helper = cache --timeout=3600

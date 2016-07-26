@@ -3,11 +3,6 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -123,6 +118,47 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# Open the specified file on GitHub. It will use the master branch by default:
+#
+#   repo -f app/controllers/application_controller.rb
+#
+# Specify a different branch:
+#
+#   repo -b another-branch -f app/controllers/application_controller.rb
+
+if [ -d .git ]; then
+    echo "Opening on Github..."
+
+# Set the default branch to current branch instead of 'master'
+# BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH='master'
+
+  while getopts ":b:f:" option
+  do
+    case "$option" in
+      b) BRANCH=$OPTARG;;
+      f) FILEPATH=$OPTARG;;
+    esac
+  done
+
+BASE=$(git config --get remote.origin.url | sed s/\\.git// | sed 's/:/\//' | sed 's/.*github.com/https:\/\/github.com/')
+URL="$BASE/blob/$BRANCH/$FILEPATH"
+
+if which xdg-open > /dev/null
+  then
+    xdg-open $URL
+  elif which gnome-open > /dev/null
+  then
+    gnome-open $URL
+  elif which open > /dev/null
+  then
+    open $URL 
+  fi
+  echo "Opened $URL"
+else
+  echo "Not a git repo"
 fi
 
 export GPGKEY=8A0F9A84
